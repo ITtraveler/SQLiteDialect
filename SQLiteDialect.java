@@ -35,6 +35,7 @@ public class SQLiteDialect extends Dialect {
         registerColumnType(Types.CLOB, "clob");
         registerColumnType(Types.BOOLEAN, "integer");
 
+        //StandardBasicTypes.STRING
         registerFunction("concat", new VarArgsSQLFunction(StringType.INSTANCE, "", "||", ""));
         registerFunction("mod", new SQLFunctionTemplate(StringType.INSTANCE, "?1 % ?2"));
         registerFunction("substr", new StandardSQLFunction("substr", StringType.INSTANCE));
